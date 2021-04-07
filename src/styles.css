@@ -1,0 +1,97 @@
+.main-container {
+  border: 1px solid rgb(185, 181, 181);
+  width: 60%;
+  height: 300px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.gallery li img {
+  cursor: pointer;
+}
+
+.lightbox {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-img {
+  max-height: 90vh;
+  max-width: 90vw;
+  object-fit: cover;
+}
+
+.prev {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  left: 0;
+  bottom: 0;
+  cursor: pointer;
+  height: 100vh;
+  width: 10vw;
+}
+svg:hover{
+  fill: rgb(163, 155, 155);
+}
+.prev svg {
+  margin-left: 3vw;
+}
+.prev:hover > svg {
+  fill: rgb(163, 155, 155);
+}
+.next {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  height: 100vh;
+  width: 10vw;
+}
+.next svg {
+  margin-right: 3vw;
+}
+.next:hover > svg {
+  fill: rgb(163, 155, 155);
+}
+
+.close {
+  cursor: pointer;
+  padding: 5px;
+  height: 25px;
+  display: block;
+  width: 25px;
+  margin-left: auto;
+  z-index: 10;
+  position: relative;
+}
+.image-count {
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+}

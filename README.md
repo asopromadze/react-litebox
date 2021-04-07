@@ -15,12 +15,12 @@ npm install --save react-grid-litebox
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-grid-litebox'
+import {Gallery} from 'react-grid-litebox'
 import 'react-grid-litebox/dist/index.css'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <Gallery />
   }
 }
 ```
