@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import CloseSvg from './CloseSvg'
 import NextSvg from './NextSvg'
 import PrevSvg from './PrevSvg'
+import styles from './styles.module.css'
 
 const Gallery = ({ images, thumbnailSize }) => {
   const [imageToShow, setImageToShow] = useState('')
@@ -15,9 +16,11 @@ const Gallery = ({ images, thumbnailSize }) => {
     setImageToShow(image)
     setLightBoxDisplay(true)
     const currentIndex = imageSrc.indexOf(image)
-    console.log(currentIndex)
     if (currentIndex === 0) {
       setDisablePrev(true)
+    }
+    if (currentIndex === imageSrc.length - 1) {
+      setDisableNext(true)
     }
   }
 
@@ -58,11 +61,10 @@ const Gallery = ({ images, thumbnailSize }) => {
 
   return (
     <div>
-      <ul className='gallery'>
+      <ul className={styles.gallery}>
         {images.map(({ src, alt }, i) => (
           <li key={i} onClick={() => showImage(src)}>
             <img
-              className='image-card'
               src={src}
               alt={alt}
               style={{
@@ -75,27 +77,27 @@ const Gallery = ({ images, thumbnailSize }) => {
       </ul>
 
       {lightboxDisplay ? (
-        <div className='lightbox'>
+        <div className={styles.lightbox}>
           <div>
-            <span className='close' onClick={hideLightBox}>
+            <span className={styles.close} onClick={hideLightBox}>
               <CloseSvg />
             </span>
-            <img className='lightbox-img' src={imageToShow} alt='alt' />
-            <div className='image-count'>
+            <img className={styles.lightboxImg} src={imageToShow} alt='alt' />
+            <div className={styles.imageCount}>
               <span>
                 {imageSrc.indexOf(imageToShow) + 1} of {imageSrc.length}
               </span>
             </div>
           </div>
           <span
-            className='prev'
+            className={styles.prev}
             onClick={showPrev}
             style={showButton(disablePrev)}
           >
             <PrevSvg />
           </span>
           <span
-            className='next'
+            className={styles.next}
             onClick={showNext}
             style={showButton(disableNext)}
           >

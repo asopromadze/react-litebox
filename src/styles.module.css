@@ -1,10 +1,10 @@
-.main-container {
+/* .main-container {
   border: 1px solid rgb(185, 181, 181);
   width: 60%;
   height: 300px;
   margin: 30px auto;
   padding: 20px;
-}
+} */
 
 .gallery {
   display: flex;
@@ -36,7 +36,7 @@
   align-items: center;
 }
 
-.lightbox-img {
+.lightboxImg {
   max-height: 90vh;
   max-width: 90vw;
   object-fit: cover;
@@ -90,7 +90,7 @@ svg:hover{
   z-index: 10;
   position: relative;
 }
-.image-count {
+.imageCount{
   color: white;
   display: flex;
   justify-content: flex-end;
