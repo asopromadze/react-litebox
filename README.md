@@ -13,18 +13,18 @@ npm install --save react-grid-litebox
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
 
-import {Gallery} from 'react-grid-litebox'
+import { Gallery } from 'react-grid-litebox'
 import 'react-grid-litebox/dist/index.css'
 
-class Example extends Component {
-  render() {
-    return <Gallery />
-  }
+const images = [{ src: '', alt: '' }]
+
+function YourComponent() {
+  return <Gallery images={images} />
 }
 ```
 
 ## License
 
-MIT © [Anri](https://github.com/Anri)
+MIT © [Anri](https://github.com/otaridi)
