@@ -1,6 +1,6 @@
 {
   "name": "react-grid-litebox",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "grid gallery with litebox",
   "author": "Anri",
   "license": "MIT",
@@ -24,7 +24,8 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "react": "^17.0.0"
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",

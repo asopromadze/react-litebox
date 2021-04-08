@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import CloseSvg from './CloseSvg'
 import NextSvg from './NextSvg'
+import Portal from './Portal'
 import PrevSvg from './PrevSvg'
 import styles from './styles.module.css'
 
@@ -77,33 +78,35 @@ const Gallery = ({ images, thumbnailSize }) => {
       </ul>
 
       {lightboxDisplay ? (
-        <div className={styles.lightbox}>
-          <div>
-            <span className={styles.close} onClick={hideLightBox}>
-              <CloseSvg />
-            </span>
-            <img className={styles.lightboxImg} src={imageToShow} alt='alt' />
-            <div className={styles.imageCount}>
-              <span>
-                {imageSrc.indexOf(imageToShow) + 1} of {imageSrc.length}
+        <Portal>
+          <div className={styles.lightbox}>
+            <div>
+              <span className={styles.close} onClick={hideLightBox}>
+                <CloseSvg />
               </span>
+              <img className={styles.lightboxImg} src={imageToShow} alt='alt' />
+              <div className={styles.imageCount}>
+                <span>
+                  {imageSrc.indexOf(imageToShow) + 1} of {imageSrc.length}
+                </span>
+              </div>
             </div>
+            <span
+              className={styles.prev}
+              onClick={showPrev}
+              style={showButton(disablePrev)}
+            >
+              <PrevSvg />
+            </span>
+            <span
+              className={styles.next}
+              onClick={showNext}
+              style={showButton(disableNext)}
+            >
+              <NextSvg />
+            </span>
           </div>
-          <span
-            className={styles.prev}
-            onClick={showPrev}
-            style={showButton(disablePrev)}
-          >
-            <PrevSvg />
-          </span>
-          <span
-            className={styles.next}
-            onClick={showNext}
-            style={showButton(disableNext)}
-          >
-            <NextSvg />
-          </span>
-        </div>
+        </Portal>
       ) : null}
     </div>
   )
