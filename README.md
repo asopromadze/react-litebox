@@ -18,10 +18,11 @@ import React from 'react'
 import { Gallery } from 'react-grid-litebox'
 import 'react-grid-litebox/dist/index.css'
 
-const images = [{ src: '', alt: '' }]
+const images = [{ src: '', alt: '' }]  // required
+const thumbnailSize = {{width: Number, height:Number}} // optional
 
 function YourComponent() {
-  return <Gallery images={images} />
+  return <Gallery images={images} thumbnailSize={thumbnailSize}/>
 }
 ```
 

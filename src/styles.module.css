@@ -1,11 +1,3 @@
-/* .main-container {
-  border: 1px solid rgb(185, 181, 181);
-  width: 60%;
-  height: 300px;
-  margin: 30px auto;
-  padding: 20px;
-} */
-
 .gallery {
   display: flex;
   justify-content: center;
@@ -23,7 +15,7 @@
 }
 
 .lightbox {
-  z-index: 1;
+  z-index: 2001;
   position: fixed;
   top: 0;
   left: 0;
@@ -95,5 +87,3 @@ svg:hover{
   display: flex;
   justify-content: flex-end;
 }
-
-/* PORTAL */

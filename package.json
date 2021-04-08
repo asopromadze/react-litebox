@@ -1,10 +1,10 @@
 {
   "name": "react-grid-litebox",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "grid gallery with litebox",
   "author": "Anri",
   "license": "MIT",
-  "repository": "Anri/react-grid-litebox",
+  "repository": "otaridi/react-litebox",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",

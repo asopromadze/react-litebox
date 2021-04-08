@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import CloseSvg from './CloseSvg'
 import NextSvg from './NextSvg'
 import Portal from './Portal'
@@ -55,6 +55,31 @@ const Gallery = ({ images, thumbnailSize }) => {
       setDisablePrev(true)
     }
   }
+
+  const handleKeyDown = (e) => {
+    switch (e.key) {
+      case 'ArrowRight':
+        showNext()
+        break
+      case 'ArrowLeft':
+        showPrev()
+        break
+      case 'Escape':
+        hideLightBox()
+        break
+      default:
+        break
+    }
+  }
+
+  useEffect(() => {
+    if (lightboxDisplay) {
+      window.addEventListener('keydown', handleKeyDown)
+    }
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [lightboxDisplay, showImage])
 
   function showButton(disable) {
     return disable ? { visibility: 'hidden' } : { visibility: 'visible' }
